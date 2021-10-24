@@ -1,7 +1,7 @@
 ## Pokemon Lite with many skills, and random play.
 
 1. Array für Pokemons und AttackSkills erstellen.
-        +Pokemon Array enthält nur die namen, skill array enthält die alle datei ab anfang.
+        *Pokemon Array enthält nur die namen, skill array enthält die alle datei ab anfang.
 2. Pokemon class erstellen  
     * constructor für Pokemon objects
     * array für attack Objekt speichern
