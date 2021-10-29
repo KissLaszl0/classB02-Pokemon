@@ -23,7 +23,7 @@ class AttackSkill
     showAttack()
     {
         return `
-        Skill name: ${this.name}
+        skill name: ${this.name}
         damage: ${this.damage}
         magic: ${this.magic}
         eigenschaft: ${this.eigenschaft}
