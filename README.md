@@ -1,12 +1,12 @@
 ## Pokemon Lite with many skills, and a random play.
 
 1. Array für Pokemons und AttackSkills erstellen.
-        *Pokemon Array enthält nur die Namen, skills array enthält die alle datei ab anfang.
+        *Pokemon Array enthält nur die Namen, skills array enthält die skills der skills Datei
 2. Pokemon class erstellen  
     * constructor für Pokemon objects
     * ein array um erlernte attack skills als Objekte zu speichern
     * learnattack skill method, um neue attacks zu lernen
-    * getZufallskill Methode gibt ein zufällig ein attackskill zurück
+    * getZufallskill Methode gibt zufällig ein attackskill zurück
     * setMagic - um Magic Werte zu setzen
     * getMagic - um Magic werten auszugeben
     * showStatus Methode - diese zeigt den aktuellen Status des Pokemons an
@@ -47,7 +47,7 @@ function getRandomNummers() {
     return nummers
 }
 ```
-Pokemon heroes erstellen. Durch das Namensarray iterieren um von jedem Pokemon\ damage und magic Werte zu erhalten, Um magic und damage Werte zu erstellen, wird getRandomNummers genutzt
+Pokemon heroes erstellen. Durch das Namensarray iterieren, um von jedem Pokemon\ damage und magic Werte zu erhalten, Um magic und damage Werte zu erstellen, wird getRandomNummers genutzt
 ```
 const pokemons = [];                    
 
@@ -60,7 +60,7 @@ pokemonNames.forEach(pokemon => {
     });
 })
 ```
-Jede von diesem wird Objekt erstellen:
+Für jedes Pokemon wird ein Objekt erstellt:
 ```
 const pokemonHeroes = pokemons.map(pokemon => {    
     return new Pokemon(pokemon.name, pokemon.damage, pokemon.magic)
@@ -82,7 +82,7 @@ pokemonHeroes.forEach(heros => {
     }
 })
 ```
-Wieder zufällig.... Heroes für den Kampf werden auch zufällig generiert,\ diese function gibt immer ein zufälligen heroe zurück.
+Wieder zufällig.... Heroes für den Kampf werden auch zufällig generiert,\ diese function gibt immer ein zufälligen hero zurück.
 ```
 function zufalligeHeroes() {
     let zahl = Math.floor(Math.random() * pokemonHeroes.length)
