@@ -1,26 +1,26 @@
-## Pokemon Lite with many skills, and random play.
+## Pokemon Lite with many skills, and a random play.
 
 1. Array für Pokemons und AttackSkills erstellen.
-        *Pokemon Array enthält nur die namen, skill array enthält die alle datei ab anfang.
+        *Pokemon Array enthält nur die Namen, skills array enthält die skills der skills Datei
 2. Pokemon class erstellen  
     * constructor für Pokemon objects
-    * array für attack Objekt speichern
-    * learnattack skill method attack zulernen- attacke in attack array speichern
-    * getZufallskill gibt ein attackskill zufällig zurück
-    * setMagic mit Magic werten Arbeiten
-    * getMagic mit Magic werten ausgeben
-    * showStatus method erstellen zeigt aktuelle status von Pokemons
+    * ein array um erlernte attack skills als Objekte zu speichern
+    * learnattack skill method, um neue attacks zu lernen
+    * getZufallskill Methode gibt zufällig ein attackskill zurück
+    * setMagic - um Magic Werte zu setzen
+    * getMagic - um Magic werten auszugeben
+    * showStatus Methode - diese zeigt den aktuellen Status des Pokemons an
        
 3. AttackSkill class erstellen
     * constructor name, damage, magic
-    * getHealth, getMagic, getName, und showAttack methoden.
+    * getHealth, getMagic, getName, und showAttack Methoden.
         
-#### Einige Methoden wurde nur für Arbeit verleichtern ertsellt.
+#### Einige Methoden wurden erstellt, um uns die Arbeit zu erleichtern.
 
-Elemente require, damit Arbeiten können.\
+Elemente require, um damit arbeiten zu können.\
 Objekte genau so.\ 
 
-Iteriere durch in jede skill, und erstelle davon Objekte. Objekte nach erstellung wird in array gespeichert.
+Iteriere durch jedes skill, und erstelle daraus ein Objekt. Objekte werden dann in einem array gespeichert.
 ```
 const attack = [];
 
@@ -34,7 +34,7 @@ for (const key in skills) { erstellen//
     )
 }
 ```
-```getRandomNumbers``` function für random zahlen bekommen. Ergebniss zwei zahl in array.
+```getRandomNumbers``` function um random Zahlen zu erhalten. Als Ergebniss erhalten wir zwei Zahlen in einem array.
 ```
 function getRandomNummers() {       
     health und magic //
@@ -47,7 +47,7 @@ function getRandomNummers() {
     return nummers
 }
 ```
-Pokemon heroes ertesllen. Name array iterieren durch und von jede name\ bekommen damage und magic werten, benutzt wird getRandomNummers für die damage und\ magic werten erstellen.
+Pokemon heroes erstellen. Durch das Namensarray iterieren, um von jedem Pokemon\ damage und magic Werte zu erhalten, Um magic und damage Werte zu erstellen, wird getRandomNummers genutzt
 ```
 const pokemons = [];                    
 
@@ -60,20 +60,20 @@ pokemonNames.forEach(pokemon => {
     });
 })
 ```
-Jede von diesem wird Objekt erstellen:
+Für jedes Pokemon wird ein Objekt erstellt:
 ```
 const pokemonHeroes = pokemons.map(pokemon => {    
     return new Pokemon(pokemon.name, pokemon.damage, pokemon.magic)
 })
 ```
-Zufallige attack function gibt eine attacke zufällig aus.
+Zufaellige attack function gibt eine attacke zufaellig aus.
 ```
 function zufalligeAttack() {      
     let zahl = Math.floor(Math.random() * attack.length)
     return attack[zahl]
 }
 ```
-Lernphase so wird implementiert, und nach attackZahl wird so viele\ attack lernen. Jede Pokemon lernt die attacke zufällig von attack skills.
+Lernphase implementiert, nach der attackZahl. Dieses bestimmt wieviele \ attack skills ein Pokemon lernt. Jeder Pokemon lernt die attacks zufällig vom attack skills array.
 ```
 const attackZahl= 10;
 pokemonHeroes.forEach(heros => {
@@ -82,7 +82,7 @@ pokemonHeroes.forEach(heros => {
     }
 })
 ```
-Wieder zufällig.... Heroes für Kampf wird auch zufällig generiert, und\ mit diese function wird immer ein zufällige heroes zurückgeben.
+Wieder zufällig.... Heroes für den Kampf werden auch zufällig generiert,\ diese function gibt immer ein zufälligen hero zurück.
 ```
 function zufalligeHeroes() {
     let zahl = Math.floor(Math.random() * pokemonHeroes.length)
@@ -90,14 +90,14 @@ function zufalligeHeroes() {
 }
 ```
 
-Heroes für Kampf:
+Heroes für den Kampf:
 ```
 const attacker = zufalligeHeroes();   
 const attacked = zufalligeHeroes();
 
 ```
-Nach erste attack muss die heroes tauschen und gegen Kampfen dafür\
-wird die swapper function gut nutzbar. Die tauscht die elemente eifach um. (A,B) (B,A)
+Nach der ersten attack muessen die heroes tauschen, dafür\
+wird die swapper function genutzt. Diese tauscht die Elemente eifach um. (A,B) (B,A)
 ```
 function swapper(heroes) {
     let swap = heroes[0];
@@ -108,15 +108,15 @@ function swapper(heroes) {
 }
 ```
 
-1. Und das spiel wir dso lange in eine while wie lange eine Elemente health von beide runter 0 geht.
+1. Das Spiel wird so lange in eine while Schleife durchgespielt, bis die health von beiden runter auf 0 geht.
 
-    * Diese function nimmt zwei Objekt element
-    * DavVon diese elementen array ertellt so wird später element1 gegen element2 taushen.
-    * if falls irgendwann zufällig zewi gleiche kommen.
-    * while so lange wie lange die elemente mehr als 0 health
+    * Diese function nimmt zwei Objekt Elemente
+    * Von diesen Elementen wird ein array ertellt. Hier wird später einfach element1 gegen element2 getauscht.
+    * if falls irgendwann zufällig zwei gleiche kommen.
+    * while so lange wie health > 0 ist
     * heroes tauschen
-    * Wenn eine hero wenige als 0 health hat programm kommen von while aus
-    * da prüfen wenn attacker mehr ? als null dann andere nicht : sonst attacker selber nicht
+    * Wenn ein hero weniger als 0 health hat, beendet das Programm die while Schleife
+    * danach prüfen wenn attacker mehr ? als null dann andere nicht : sonst attacker selber nicht
 ```
 function startGame(attacker, attacked) {
     const heroes = [attacker, attacked];  
@@ -138,7 +138,7 @@ console.log(startGame(attacker, attacked));
 ```
 ## Pokemon class attack method:
 
-1. attack method prüfen, healt rechnen, und elementen zurückgeben.
+1. attack method prüfen, healt rechnen, und elemente zurückgeben.
 
 
 
